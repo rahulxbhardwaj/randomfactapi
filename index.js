@@ -7,17 +7,19 @@ import randomFact from "./randomFact.js"
 
 
 
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+// app.get('/', (req, res) => {
+//   const jsonData = {
+//    fact : randomFact()
+//   };
+//   res.send(jsonData);
+// });
 
-app.get('/fact' , (req,res) => {
-  
-  const jsonData = {
-   fact : randomFact()
-  };
-  res.send(jsonData);
-})
+app.use((req, res, next) => {
+   const jsonData = {
+     fact : randomFact()
+    };
+    res.send(jsonData);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
