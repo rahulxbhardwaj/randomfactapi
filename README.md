@@ -6,7 +6,7 @@ The API is hosted on Vercel, and the code was written with the help of Replit, a
 
 ## Usage
 
-You can use the API by sending a GET request to the following endpoint:
+You can use the API by **sending a GET** request to the following endpoint:
 
 Here's an example of how to use the API in Node.js:
 
