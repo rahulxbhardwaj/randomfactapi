@@ -14,13 +14,16 @@ import randomFact from "./randomFact.js"
 //   res.send(jsonData);
 // });
 
-app.use((req, res, next) => {
-   const jsonData = {
-     fact : randomFact()
-    };
-    res.send(jsonData);
-});
-
+try {
+    app.use((req, res, next) => {
+        const jsonData = {
+            fact: randomFact()
+        };
+        res.send(jsonData);
+    });
+} catch (err) {
+    res.send("Something Went Wrong")
+}
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
